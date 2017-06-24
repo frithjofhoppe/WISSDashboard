@@ -1,0 +1,41 @@
+<html lang = "de">
+  <head>
+    <meta charset = "utf-8" />
+    <link rel="stylesheet" type="text/css" href ="css/config.css" />
+  </head>
+  <body>
+    <?php
+      setcookie('rightaccess','true');
+    ?>
+    <div id="main">
+      <div id = "login_view">
+        <div id="login_view_logo">
+          <img src ="pic/logo.png" id="login_view_logo_picture"/>
+        </div>
+        <div id="login_view_textgroup">
+          <div id="login_view_textgroup_welcome">
+            <p>
+              Bearbeitungsbereich
+            </p>
+            <p>
+              Melden sie sich bitte an
+            </p>
+          </div>
+        </div>
+        <form action="php/config.php" method="post">
+          <div id="login_view_login">
+            <div id="login_view_login_username">
+              <input type="text" name="username" autocomplete="off"/>
+            </div>
+            <div id="login_view_login_password">
+              <input type="password" name="password"/>
+            </div>
+            <div id="login_view_login_sendbtn">
+              <input type="submit" value="login"/>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

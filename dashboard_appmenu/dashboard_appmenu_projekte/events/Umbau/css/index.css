@@ -1,0 +1,142 @@
+body
+{
+
+  width:100%;
+  height: 100%;
+  font-family: "Segoe UI light";
+}
+
+/* main stellt das zentrale Element da*/
+#main
+{
+  background-color: white;
+  position: absolute;
+  left:0px;
+  top:31%;
+  bottom:20%;
+  width:80%;
+  height:100%;
+}
+
+.main_header
+{
+  font-size:300%;
+}
+
+.main_text
+{
+  text-align: justify;
+  font-size:150%;
+}
+
+/*head stellt das Kopfelement da*/
+#header
+{
+  position: absolute;
+  top:0px;
+  left:0px;
+  width:80%;
+  height:31%;
+
+}
+
+.main_content
+{
+
+  position: relative;
+  top:0px;
+  left:10%;
+  width:80%;
+  height: 40%;
+  text-align: center;
+}
+
+img.head_img
+{
+  height: 340%;
+  width:auto;
+}
+
+
+img.logo
+{
+  width:70%;
+  height: auto;
+}
+
+
+img.content_picture
+{
+  width:20%;
+  height: auto;
+}
+
+/*sidebar stellt das Seitenelement zu rechten Seite der Ansicht da*/
+
+#sidebar
+{
+  background-color: #E393A1;
+  position: fixed;
+  right: 0px;
+  top:0px;
+  width:20%;
+  height: 100%;
+}
+
+#sidebar_top
+{
+  position:absolute;
+  top: 2%;
+  right:0px;
+  height:29%;
+  width: 100%;
+
+}
+
+#sidebar_middle
+{
+  position: absolute;
+  width:100%;
+  height: 70%;
+  top:31%;
+  background-color: #800000;
+}
+
+#sidebar_logo
+{
+  position: relative;
+  left:15%;
+}
+
+#sidebar_middle_center
+{
+  position: relative;
+  width:100%;
+  height: 50%;
+  top:31%;
+}
+
+#sidebar_middle_logo
+{
+  position: relative;
+  top:0px;
+  left:30%;
+}
+
+#sidebar_middle_txt
+{
+  position: relative;
+  top:0px;
+  left:30%;
+}
+
+p.sidebar_middle_txt
+{
+  font-size: 2vw;
+  color:white;
+}
+
+img.app
+{
+  width:40%;
+}

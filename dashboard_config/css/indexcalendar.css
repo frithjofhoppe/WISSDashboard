@@ -1,0 +1,214 @@
+body
+{
+
+  width:100%;
+  height: 100%;
+  font-family: "Segoe UI light";
+}
+
+/* main stellt das zentrale Element da*/
+#main
+{
+  background-color: white;
+  position: absolute;
+  left:0px;
+  top:31%;
+  bottom:20%;
+  width:80%;
+  height:100%;
+}
+
+#main_four
+{
+  position: relative;
+  left:16%;
+  top:10%;
+}
+
+.main_header
+{
+  font-size:300%;
+}
+
+.main_text
+{
+  text-align: justify;
+  font-size:150%;
+}
+
+.main_p
+{
+  margin-top: 10%;
+  font-size: 3.5vw;
+}
+
+
+/*head stellt das Kopfelement da*/
+#header
+{
+  position: absolute;
+  top:0px;
+  left:0px;
+  width:80%;
+  height:31%;
+  background-color: gray;
+}
+
+.main_content
+{
+
+  position: relative;
+  top:0px;
+  left:10%;
+  width:80%;
+  height: 40%;
+  text-align: center;
+}
+
+#txt_head
+{
+  font-size:5vw;
+  color:white;
+  position: relative;
+  left:35%;
+  top:30%;
+}
+
+
+img.logo
+{
+  width:70%;
+  height: auto;
+}
+
+
+img.content_picture
+{
+  width:20%;
+  height: auto;
+}
+
+p.head_p
+{
+  font-size: 3.5vw;
+}
+
+/*sidebar stellt das Seitenelement zu rechten Seite der Ansicht da*/
+
+#sidebar
+{
+  background-color: #800000;
+  position: fixed;
+  right: 0px;
+  top:0px;
+  width:20%;
+  height: 100%;
+}
+
+#sidebar_top
+{
+  position:absolute;
+  top: 2%;
+  right:0px;
+  height:29%;
+  width: 100%;
+
+}
+
+#sidebar_middle
+{
+  position: absolute;
+  width:100%;
+  height: 100%;
+  top:10%;
+  background-color: #800000;
+}
+
+#sidebar_logo
+{
+  position: relative;
+  left:15%;
+}
+
+#sidebar_middle_center
+{
+  position: relative;
+  width:100%;
+  height: 50%;
+  top:0%;
+}
+
+#sidebar_middle_logo
+{
+  position: relative;
+  top:0px;
+  left:30%;
+}
+
+#sidebar_middle_txt
+{
+  position: relative;
+  top:0px;
+  left:30%;
+}
+
+.sidebare_middle_text_link
+{
+  background-color: #E393A1;
+  padding-left: 4%;
+}
+
+p.sidebar_middle_txt
+{
+  font-size: 2vw;
+  color:white;
+}
+
+.sidebar_a_pages
+{
+  text-decoration: none;
+
+}
+
+img.app
+{
+  width:40%;
+}
+
+#formular
+{
+  height: 100%;
+  width: 80%;
+  position: relative;
+  left:9%;
+}
+
+#formulardelete
+{
+  height:0%;
+  width: 80%;
+  position: relative;
+  left:0%;
+  top:50%;
+}
+.formfelder
+{
+  position: relative;
+  font-size: 2vw;
+  float: left;
+  height: 3vw;
+  width:50vw;
+}
+
+.formdiv
+{
+  float: left;
+  margin:3%;
+}
+
+.lblformular
+{
+  margin-right: 20%;
+  float:left;
+  font-size: 2vw;
+}

@@ -53,7 +53,7 @@
           $db_password = fgets($myfilePasswort);
 
 
-          $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard',$db_username,$db_username);
+          $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard',$db_username,$db_password);
           $pdo_db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $pdo_db_connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
           $pdo_select = ("SELECT ID,ImgPersonPath,ImgPersonShow,Person,Position,Mail,Telephone from appmenu_team");

@@ -126,10 +126,16 @@
                   $accessPw = fgets($myfilePw);
                   fclose($myfilePw);
 
+                  $myfileUsername = fopen("..\\..\\..\\..\\dashboardPassword\username.txt","r");
+                  $db_username = fgets($myfileUsername);
+
+                  $myfilePasswort = fopen("..\\..\\..\\..\\dashboardPassword\password.txt","r");
+                  $db_password = fgets($myfilePasswort);
+
                   if($accessPw == "yes")
                   {
 
-                  $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard','xamp','xamp');
+                  $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard',$db_username,$db_password);
                   $pdo_db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                   $pdo_db_connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
                   $pdo_select = ("SELECT showName from main_pictures");

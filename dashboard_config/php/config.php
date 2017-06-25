@@ -7,6 +7,12 @@
   $db_username = 'xamp';
   $db_password = 'xamp';
 
+  $myfileUsername = fopen("..\\..\\..\\..\\dashboardPassword\username.txt","r");
+  $db_username = fgets($myfileUsername);
+
+  $myfilePasswort = fopen("..\\..\\..\\..\\dashboardPassword\password.txt","r");
+  $db_password = fgets($myfilePasswort);
+
   /*Hashwert*/
   $hash = '';
 

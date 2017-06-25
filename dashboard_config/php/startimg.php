@@ -14,6 +14,12 @@ if($accessPw == "yes")
   $db_username = 'xamp';
   $db_password = 'xamp';
 
+  $myfileUsername = fopen("..\\..\\..\\..\\dashboardPassword\username.txt","r");
+  $db_username = fgets($myfileUsername);
+
+  $myfilePasswort = fopen("..\\..\\..\\..\\dashboardPassword\password.txt","r");
+  $db_password = fgets($myfilePasswort);
+
   $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard',$db_username,$db_password);
 
   $additionalDir = $sitename;

@@ -4,7 +4,6 @@ body
   width:100%;
   height: 100%;
   font-family: "Segoe UI light";
-  overflow-x: hidden;
 }
 
 /* main stellt das zentrale Element da*/
@@ -19,6 +18,13 @@ body
   height:100%;
 }
 
+#main_four
+{
+  position: relative;
+  left:16%;
+  top:10%;
+}
+
 .main_header
 {
   font-size:300%;
@@ -30,6 +36,13 @@ body
   font-size:150%;
 }
 
+.main_p
+{
+  margin-top: 0%;
+  font-size: 3.5vw;
+}
+
+
 /*head stellt das Kopfelement da*/
 #header
 {
@@ -38,7 +51,7 @@ body
   left:0px;
   width:80%;
   height:31%;
-
+  background-color: gray;
 }
 
 .main_content
@@ -52,10 +65,13 @@ body
   text-align: center;
 }
 
-img.head_img
+#txt_head
 {
-  height: 340%;
-  width:auto;
+  font-size:5vw;
+  color:white;
+  position: relative;
+  left:35%;
+  top:30%;
 }
 
 
@@ -72,11 +88,16 @@ img.content_picture
   height: auto;
 }
 
+p.head_p
+{
+  font-size: 3.5vw;
+}
+
 /*sidebar stellt das Seitenelement zu rechten Seite der Ansicht da*/
 
 #sidebar
 {
-  background-color: #E393A1;
+  background-color: #800000;
   position: fixed;
   right: 0px;
   top:0px;
@@ -98,8 +119,8 @@ img.content_picture
 {
   position: absolute;
   width:100%;
-  height: 70%;
-  top:31%;
+  height: 100%;
+  top:0%;
   background-color: #800000;
 }
 
@@ -114,7 +135,7 @@ img.content_picture
   position: relative;
   width:100%;
   height: 50%;
-  top:31%;
+  top:10%;
 }
 
 #sidebar_middle_logo
@@ -131,13 +152,62 @@ img.content_picture
   left:30%;
 }
 
+.sidebare_middle_text_link
+{
+  background-color: #E393A1;
+  padding-left: 4%;
+}
+
 p.sidebar_middle_txt
 {
   font-size: 2vw;
   color:white;
 }
 
+.sidebar_a_pages
+{
+  text-decoration: none;
+
+}
+
 img.app
 {
   width:40%;
+}
+
+#formular
+{
+  height: 100%;
+  width: 80%;
+  position: relative;
+  left:9%;
+}
+
+#formulardelete
+{
+
+  position: relative;
+  left:0%;
+  top:80%;
+}
+.formfelder
+{
+  position: relative;
+  font-size: 2vw;
+  float: left;
+  height: 3vw;
+  width:50vw;
+}
+
+.formdiv
+{
+  float: left;
+  margin:3%;
+}
+
+.lblformular
+{
+  margin-right: 20%;
+  float:left;
+  font-size: 2vw;
 }

@@ -53,33 +53,33 @@
           $db_password = fgets($myfilePasswort);
 
 
-          $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard',$db_username,$db_username);
+          $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard',$db_username,$db_password);
           $pdo_db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $pdo_db_connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-          $pdo_select = ("SELECT ID,ImgPersonPath,ImgPersonShow,Person,Position,Mail,Telephone from appmenu_team");
+          $pdo_select = ("SELECT ID,Titel,SubTitel,IndexPath,ImgPath from appmenu_umgebung");
 
           $result = $pdo_db_connection->prepare($pdo_select);
           $result->execute();
 
+          $linklocal = '//'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
 
           foreach ($result as  $row)
            {
+             print "<a href = '" . $linklocal .$row['IndexPath']. "' >";
              print "<div id='person_context_" . $row['ID'] ."' class='person_context'>";
              print  "<div ='pic_content_" . $row['ID'] . "' class='pic_context'>";
-             print    "<img src='" . $row['ImgPersonPath'] ."' class='pic_context_view'/>";
+             print    "<img src='" . $row['ImgPath'] ."' class='pic_context_view'/>";
              print  "</div>";
              print "<div id='text_context_" . $row['ID'] . "' class='text_content'>";
              print  "<div id='text_context_" . $row['ID'] . "_name' class='text_content_entry'>";
-             print  $row['Person'];
+             print  $row['Titel'];
              print  "</div>";
              print  "<div id='text_context_" . $row['ID'] ."_position' class='text_content_entry text_content_entry_identifier'>";
-             print  $row['Position'];
-             print  "</div>";
-             print  "<div id='text_context_" . $row['ID'] . "_mail' class='text_content_entry text_content_entry_mail'>";
-             print  $row['Mail'];
+             print  $row['SubTitel'];
              print  "</div>";
              print "</div>";
              print "</div>";
+             print "</a>";
            }
 
 

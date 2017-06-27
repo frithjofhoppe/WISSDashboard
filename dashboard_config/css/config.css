@@ -2,16 +2,17 @@ body
 {
   font-family: "Segoe UI light";
   background-color: #E393A1;
+  overflow-x: hidden;
 }
 
 /*main ist der gesamte login Bereich*/
 #main
 {
   position: absolute;
-  top:20%;
+  top:30%;
   left:20%;
   width:60%;
-  height: 60%;
+  height: 40%;
   background-color: gray;
 }
 
@@ -21,7 +22,7 @@ body
   top:0%;
   left:0%;
   width:100%;
-  height: 80%;
+  height: 100%;
   background-color: #800000;
 }
 
@@ -40,6 +41,11 @@ body
   top:20%;
 }
 
+#login_view_textgroup_welcome
+{
+  color:white;
+}
+
 #login_view_login
 {
   position: absolute;
@@ -49,7 +55,7 @@ body
 
 img
 {
-  width:40% ;
+  width:30% ;
   height: auto;
 }
 
@@ -64,9 +70,14 @@ input
 {
   margin-bottom: 2%;
   font-size: 1.5vw;
+  font-family: "Segoe UI light";
 }
 
 input[type="submit"]
 {
   background-color: white;
+  padding-top:1%;
+  padding-bottom:1%;
+  padding-left: 5%;
+  padding-right: 5%;
 }

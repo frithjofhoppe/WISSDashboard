@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset ="utf-8" />
-    <link rel="stylesheet" type="text/css" href="../css/indexcalendar.css">
+    <link rel="stylesheet" type="text/css" href="../css/indexprojekt.css">
   </head>
   <body>
     <div id = "header">
@@ -95,7 +95,7 @@
             <label class="lblformular">Seitenname</label>  <input type="text" name="sitename" class="formfelder"/>
             </div>
             <div id="seitendatum" class="formdiv">
-              <label class="lblformular">Datum</label> <input type="text" name="date" class="formfelder"/>
+              <label class="lblformular">Datum (YYYY-MM-DD)</label> <input type="text" name="date" class="formfelder"/>
             </div>
             <div id="seitenhinweis" class="formdiv">
               <label class="lblformular">Hinweis</label> <input type="text" name = "addition" class="formfelder"/>

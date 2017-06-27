@@ -6,7 +6,7 @@
   <body>
     <div id = "header">
       <div id="img_head">
-        <img src="pic/pic_team_head" class="head_img"/>
+        <img src="pic/cal1_mod2.jpg" class="head_img"/>
       </div>
     </div>
     <div id="sidebar">
@@ -50,7 +50,7 @@
             $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard',$db_username,$db_password);
             $pdo_db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $pdo_db_connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-            $pdo_select = ("SELECT Titel,Date,Link from appmenu_kalender");
+            $pdo_select = ("SELECT Titel,Date,Link from appmenu_kalender order by Date ASC");
 
             $linklocal = '//'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
             $result = $pdo_db_connection->prepare($pdo_select);

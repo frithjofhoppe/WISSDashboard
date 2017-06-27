@@ -19,11 +19,27 @@ body
   height:100%;
 }
 
+.main_p
+{
+
+  font-size: 3.5vw;
+
+}
+
 #main_four
 {
   position: relative;
   left:16%;
-  top:10%;
+  width:110%;
+  top:15%;
+}
+
+#main_second_titel
+{
+  position: relative;
+  top:5%;
+  margin-bottom: 10;
+
 }
 
 .main_header
@@ -37,11 +53,7 @@ body
   font-size:150%;
 }
 
-.main_p
-{
-  margin-top: 0%;
-  font-size: 3.5vw;
-}
+
 
 
 /*head stellt das Kopfelement da*/
@@ -182,6 +194,7 @@ img.app
   width: 80%;
   position: relative;
   left:9%;
+
 }
 
 #formulardelete
@@ -189,7 +202,7 @@ img.app
 
   position: relative;
   left:0%;
-  top:80%;
+  top:10%;
 }
 .formfelder
 {

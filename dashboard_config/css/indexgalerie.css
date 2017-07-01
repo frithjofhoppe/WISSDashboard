@@ -251,7 +251,8 @@ div.inline
 
 #main_workspace
 {
-
+   position: relative;
+   left:50%;
 }
 
 

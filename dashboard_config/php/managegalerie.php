@@ -109,6 +109,10 @@
           </div>
         </div>
       <div id="main_workspace">
+        <div id="main_workspace_describer">
+          <label id="main_workspace_describer_bild">Bildname</label>
+          <label id="main_workspace_describer_describer">Bezeichner</label>
+        </div>
       </div>
     </div>
     <script src="../js/jquery-3.2.1.js"></script>

@@ -16,13 +16,14 @@ if (is_dir($dir)) {
 
      closedir($dh);
 
+
      foreach($images as $img)
      {
        /*print "<div id = '".$img."' class='float distance'>";
        print "<a href = 'pic/".$img."' target = '_blank'><img  class='order' src = 'pic/".$img."' alt = 'fail'/></a>";
        print "<label class = 'distance'>".$img."</label>";
        print "</div>";*/
-      print $img;
+      print "<label>".$img."</label>";
       print "<br>";
 
      }

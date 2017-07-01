@@ -53,14 +53,22 @@ label.titel
 
 #main_head_buttoninput_button
 {
+  position:relative;
   width:100%;
   height:50%;
   background-color: navy;
 }
 
+button.head
+{
+  position: relative;
+  width:50%;
+  height: 60%;
+}
+
 .float
 {
-  
+  float:left;
 }
 
 #main_head_buttoninput_button_create

@@ -99,32 +99,13 @@
             </div>
           </div>
 
-          <div id="main_head_buttoninput_input_btnAlter">
-           <div id="input1" class="verticallist">
-            <div id="main_head_buttoninput_input_label_folder" class="inline">
-              <label type="text" placeholder="Relativer Ordnerpfad" id="main_head_buttoninput_input_label_folder_txt" name="alter">Ordnername</label>
-            </div>
-            <div id="main_head_buttoninput_input_folder" class="inline">
-              <input id="main_head_buttoninput_input_folder_textfield" name="alter"/>
-            </div>
-           </div>
-           <div id="input2" class="verticallist">
-             <div id="main_head_buttoninput_input_label_date" class="inline">
-               <label type="text" placeholder="Relativer Ordnerpfad" id="main_head_buttoninput_input_label_date_txt" name="alter">Datum</label>
-             </div>
-             <div id="main_head_buttoninput_input_date" class="inline">
-               <input id="main_head_buttoninput_input_date_textfield" name="alter"/>
-             </div>
-            </div>
-            <div id="input3" class="verticallist">
-              <div id="main_head_buttoninput_input_label_description" class="inline">
-                <label type="text" placeholder="Relativer Ordnerpfad" id="main_head_buttoninput_input_label_description_txt" name="alter">Anzeigename</label>
-              </div>
-              <div id="main_head_buttoninput_input_description" class="inline">
-                <input id="main_head_buttoninput_input_description_textfield" name="alter"/>
-              </div>
-             </div>
-           </div>
+
+          <div id="enter">
+          </div>
+
+
+          <!-- platz für automatischen text -->
+
           </div>
         </div>
       <div id="main_workspace">

@@ -13,8 +13,14 @@ $(document).ready(function(){
     });
 
   $('body').on('blur', '#main_head_buttoninput_input_folder_textfield', function () {
-       window.alert("hallo");
+    var text = $("#main_head_buttoninput_input_folder_textfield").val();
+    $.post("getImageList.php",
+        {
+          dir: $("#main_head_buttoninput_input_folder_textfield").val()
+        },
+        function(data,status){
+            $("#main_workspace").append().html(data);
+        });
   });
-
 
 });

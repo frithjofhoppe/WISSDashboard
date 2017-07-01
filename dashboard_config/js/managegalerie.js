@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+  $('#main_workspace').css( "visibility", "hidden" );
+
+
   $('#main_head_buttoninput_button_create').click(function(){
     $('#enter').after().load("../html/manageGalerie_inputCreate.html");
     /*$.ajax({
@@ -19,6 +22,8 @@ $(document).ready(function(){
 
   $('#main_head_buttoninput_button_modify').click(function(){
     $("#main_head_buttoninput_input_btnAlter").remove();
+    $('#main_workspace_content').remove();
+    $('#main_workspace').css( "visibility", "hidden" );
     });
 
 
@@ -30,8 +35,9 @@ $(document).ready(function(){
           dir: $("#main_head_buttoninput_input_folder_textfield").val()
         },
         function(data,status){
+          $('#main_workspace').css( "visibility", "visible" );
            text = data;
-            $(text).appendTo('#main_workspace');
+            $(text).appendTo('#main_workspace_content');
         });
   });
 

@@ -88,26 +88,27 @@
         </div>
         <div id ="main_head_buttoninput">
           <div id="main_head_buttoninput_button">
-            <div id="main_head_buttoninput_button_create" class="float">
+            <div id="main_head_buttoninput_button_create" class="float align">
               <button id="create" class="head" name="create">Erstellen</button>
             </div>
-            <div id="main_head_buttoninput_button_modify" class="float">
+            <div id="main_head_buttoninput_button_modify" class="float align">
               <button id="modify" class="head" name="modify"/>Bearbeiten</button>
             </div>
-            <div id="main_head_buttoninput_button_remove" class="float">
+            <div id="main_head_buttoninput_button_remove" class="float align">
               <button id="remove" class="head" name="remove"/>Entfernen</button>
             </div>
           </div>
-          <div id="main_head_buttoninput_input">
-            <div id="main_head_buttoninput_input_btnAlter">
+
+          <div id="main_head_buttoninput_input_btnAlter">
+
+            <div id="main_head_buttoninput_input_btn" >
               <button id="alter" name="alter"/>Bestätigen</button>
             </div>
             <div id="main_head_buttoninput_input_folder">
-              <input type="text" id="alter" name="alter"/>
+              <input type="text" placeholder="Relativer Ordnerpfad" id="alterinput" name="alter"/>
             </div>
           </div>
         </div>
-      </div>
       <div id="main_workspace">
       </div>
     </div>

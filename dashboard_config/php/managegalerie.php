@@ -116,6 +116,14 @@
                <input id="main_head_buttoninput_input_date_textfield" name="alter"/>
              </div>
             </div>
+            <div id="input3" class="verticallist">
+              <div id="main_head_buttoninput_input_label_description" class="inline">
+                <label type="text" placeholder="Relativer Ordnerpfad" id="main_head_buttoninput_input_label_description_txt" name="alter">Anzeigename</label>
+              </div>
+              <div id="main_head_buttoninput_input_description" class="inline">
+                <input id="main_head_buttoninput_input_description_textfield" name="alter"/>
+              </div>
+             </div>
            </div>
           </div>
         </div>

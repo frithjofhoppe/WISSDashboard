@@ -83,18 +83,18 @@
     </div>
     <div id = "main">
       <div id="main_head">
-        <div id="main_head_titel">
-          Galerie
+        <div id="main_head_titel" >
+          <label class="titel">Galerie</label>
         </div>
         <div id ="main_head_buttoninput">
           <div id="main_head_buttoninput_button">
-            <div id="main_head_buttoninput_button_create">
+            <div id="main_head_buttoninput_button_create" class="float">
               <button id="create" name="create">Erstellen</button>
             </div>
-            <div id="main_head_buttoninput_button_modify">
+            <div id="main_head_buttoninput_button_modify" class="float">
               <button id="modify" name="modify"/>Bearbeiten</button>
             </div>
-            <div id="main_head_buttoninput_button_remove">
+            <div id="main_head_buttoninput_button_remove" class="float">
               <button id="remove" name="remove"/>Entfernen</button>
             </div>
           </div>

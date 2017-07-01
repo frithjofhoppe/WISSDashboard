@@ -109,7 +109,13 @@
             </div>
            </div>
            <div id="input2" class="verticallist">
-             jkj
+             <div id="main_head_buttoninput_input_label_date" class="inline">
+               <label type="text" placeholder="Relativer Ordnerpfad" id="main_head_buttoninput_input_label_date_txt" name="alter">Datum</label>
+             </div>
+             <div id="main_head_buttoninput_input_date" class="inline">
+               <input id="main_head_buttoninput_input_date_textfield" name="alter"/>
+             </div>
+            </div>
            </div>
           </div>
         </div>

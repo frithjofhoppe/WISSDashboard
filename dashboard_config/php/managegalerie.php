@@ -100,13 +100,17 @@
           </div>
 
           <div id="main_head_buttoninput_input_btnAlter">
-
-            <div id="main_head_buttoninput_input_btn" >
-              <button id="alter" name="alter"/>Bestätigen</button>
+           <div id="input1" class="verticallist">
+            <div id="main_head_buttoninput_input_label_folder" class="inline">
+              <label type="text" placeholder="Relativer Ordnerpfad" id="main_head_buttoninput_input_label_folder_txt" name="alter">Ordnername</label>
             </div>
-            <div id="main_head_buttoninput_input_folder">
-              <input type="text" placeholder="Relativer Ordnerpfad" id="alterinput" name="alter"/>
+            <div id="main_head_buttoninput_input_folder" class="inline">
+              <input id="main_head_buttoninput_input_folder_textfield" name="alter"/>
             </div>
+           </div>
+           <div id="input2" class="verticallist">
+             jkj
+           </div>
           </div>
         </div>
       <div id="main_workspace">

@@ -116,7 +116,10 @@
           </div>
           <div id="main_workspace_content">
           </div>
-        </div>-->
+        </div>
+        <div id="main_workspace_btnSave" class="endalign">
+          <button id="save" class="head" name="save"/>Speichern</button>
+        </div> -->
     </div>
     <script src="../js/jquery-3.2.1.js"></script>
     <script src="../js/managegalerie.js"></script>

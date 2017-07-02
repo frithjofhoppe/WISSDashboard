@@ -1,14 +1,9 @@
 $(document).ready(function(){
 
-
-
-
   $('#main_head_buttoninput_button_create').click(function(){
     $('#enter').after().load("../html/manageGalerie_inputCreate.html");
 
   });
-
-
 
   $('#main_head_buttoninput_button_modify').click(function(){
     $("#main_head_buttoninput_input_btnAlter").remove();
@@ -34,15 +29,13 @@ $(document).ready(function(){
           $('#main_workspace').append("<label id='main_workspace_describer_bild'>Bildname</label>");
           $('#main_workspace').append("<label id='main_workspace_describer_describer'>Bezeichner</label>");
           $('#main_workspace').append("</div><div id='main_workspace_content'></div> ");
+          $('#main_workspace').append("<div id='main_workspace_btnSave' class='endalign'>");
+          $('#main_workspace').append("<button id='save' class='head' name='save'>Speichern</button></div>");
 
-           text = data;
-           if(text !== "")
-           {
-            $(text).appendTo('#main_workspace_content');
-            }
-            else {
-                $("Ordner nicht gefudnen!!").appendTo('#main_workspace_content');
-            }
+          text = data;
+
+          $(text).appendTo('#main_workspace_content');
+
         });
   });
 

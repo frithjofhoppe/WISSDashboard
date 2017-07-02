@@ -303,7 +303,13 @@ input.listobject_input_text
   font-size: 2vw;
 }
 
-
+.endalign
+{
+position: relative;
+left:24%;
+width: 53%;
+height:10%;
+}
 
 
 /*head stellt das Kopfelement da*/

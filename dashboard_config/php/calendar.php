@@ -7,7 +7,12 @@ fclose($myfilePw);
 if($accessPw == "yes")
 {
   $sitename = $_POST['sitename'];
-  $date = $_POST['date'];
+  $rawdate = $_POST['date'];
+  $date = "";
+
+  list($day,$month,$year) = explode(".",$rawdate);
+  $date = $year.'-'.$month.'-'.$day;
+
   $addition = $_POST['addition'];
   $deleteoption = $_POST['deleteoption'];
 

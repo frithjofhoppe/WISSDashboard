@@ -95,7 +95,7 @@
             <label class="lblformular">Seitenname</label>  <input type="text" name="sitename" class="formfelder"/>
             </div>
             <div id="seitendatum" class="formdiv">
-              <label class="lblformular">Datum (YYYY-MM-DD)</label> <input type="text" name="date" class="formfelder"/>
+              <label class="lblformular">Datum (DD.MM.YYYY)</label> <input type="text" name="date" class="formfelder"/>
             </div>
             <div id="seitenhinweis" class="formdiv">
               <label class="lblformular">Hinweis</label> <input type="text" name = "addition" class="formfelder"/>

@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  var phpContent = [];
+
   $('#main_head_buttoninput_button_create').click(function(){
     $('#enter').after().load("../html/manageGalerie_inputCreate.html");
 
@@ -37,6 +39,23 @@ $(document).ready(function(){
           $(text).appendTo('#main_workspace_content');
 
         });
+  });
+
+  $('body').on('click','#save',function(){
+
+    var listobjectlength =  $('.listobject').length;
+
+    $('.listobject').each(function(index){
+
+      var img = $(this).children().first().children().html();
+      var imgtext = $(this).children().last().children().val();
+
+        //phpContent += "{img:'" + img + "' , text:'" + imgtext +"'},";
+        phpContent.push("{img:'" + img + "' , text:'" + imgtext +"'}");
+    });
+
+    window.alert(phpContent);
+
   });
 
 });

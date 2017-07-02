@@ -270,6 +270,12 @@ div.inline
   background-color: gray;
 }
 
+#main_workspace_describer_describer
+{
+  position: relative;
+  left:30%;
+}
+
 div.listobject
 {
   position: relative;

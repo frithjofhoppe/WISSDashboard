@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
-  var phpContent = [];
-
+  //var phpContent = {"images":[{'name':"dog.jpg","group":"home"},{"name":"cat.jpg","group":"outdoor"},{"name":"bird.jpg","group":"sky"}]};
+  var phpContent = {'images':[{'name':'dog.jpg','group':'home'},{'name':'cat.jpg','group':'outdoor'},{'name':'bord.jpg','group':'sky'}]};
   $('#main_head_buttoninput_button_create').click(function(){
     $('#enter').after().load("../html/manageGalerie_inputCreate.html");
 
@@ -41,23 +41,49 @@ $(document).ready(function(){
         });
   });
 
+  function entry(name,value,group)
+  {
+    this.name = name;
+    this.value = value;
+    this.group = group;
+  }
+
   $('body').on('click','#save',function(){
 
     var listobjectlength =  $('.listobject').length;
+    /*phpContent.push("{name:'group',value:'" .$groupName"'}");
+    phpContent.push("{name:}")*/
+
+    var group = $('#main_head_buttoninput_input_description_textfield').val();
+
 
     $('.listobject').each(function(index){
 
       var img = $(this).children().first().children().html();
       var imgtext = $(this).children().last().children().val();
+
         //phpContent += "{img:'" + img + "' , text:'" + imgtext +"'},";
-        phpContent.push("{img:'" + img + "' , text:'" + imgtext +"'}");
+      /*  if(index !== listobjectlength-1)
+         {
+        phpContent.push("{name:'" + img + "' , value:'" + imgtext +"'}");
+         }
+         else {
+           phpContent.push("{name:'" + img + "' , value:'" + imgtext +"'}]}");
+         }*/
+
+         var tempString = "{name:"+img+",desription:"+ imgtext +",group:"+group+"}";
+      //   var temp = new entry(img,imgtext,group);
+         phpContent.images.push({"name":img,"description":"hallo","group":"hallo"});
+
     });
+
+
 
     window.alert(phpContent);
     $.ajax({
       type:'POST',
-      url:'createImageList.php',
-      data:phpContent,
+      url:'testpost.php',
+      data:{mydata:JSON.stringify(phpContent)},
       success:function()
       {
         window.alert("Die Daten wurden übertragen");

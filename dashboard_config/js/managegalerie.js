@@ -49,12 +49,20 @@ $(document).ready(function(){
 
       var img = $(this).children().first().children().html();
       var imgtext = $(this).children().last().children().val();
-
         //phpContent += "{img:'" + img + "' , text:'" + imgtext +"'},";
         phpContent.push("{img:'" + img + "' , text:'" + imgtext +"'}");
     });
 
     window.alert(phpContent);
+    $.ajax({
+      type:'POST',
+      url:'createImageList.php',
+      data:phpContent,
+      success:function()
+      {
+        window.alert("Die Daten wurden übertragen");
+      }
+    });
 
   });
 

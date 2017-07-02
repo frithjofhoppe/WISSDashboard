@@ -50,7 +50,7 @@
             $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard',$db_username,$db_password);
             $pdo_db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $pdo_db_connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-            $pdo_select = ("SELECT Titel,Date,Link from appmenu_kalender order by Date ASC");
+            $pdo_select = ("SELECT Titel,DATE_FORMAT(Date,'%d.%m.%Y') Date,Link from appmenu_kalender order by Date ASC");
 
             $linklocal = '//'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
             $result = $pdo_db_connection->prepare($pdo_select);

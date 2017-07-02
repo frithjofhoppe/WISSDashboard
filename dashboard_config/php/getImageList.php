@@ -23,8 +23,10 @@ if (is_dir($dir)) {
        print "<a href = 'pic/".$img."' target = '_blank'><img  class='order' src = 'pic/".$img."' alt = 'fail'/></a>";
        print "<label class = 'distance'>".$img."</label>";
        print "</div>";*/
-      print "<label>".$img."</label>";
-      print "<br>";
+      print"<div class='listobject'>";
+      print "<div class='listobject_img'><label>".$img."</label></div>";
+      print "<div class='listobject_input'><input class='listobject_input_text' type='text' name='".$img."'/></div>";
+      print "</div>";
 
      }
 

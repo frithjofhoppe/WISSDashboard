@@ -256,7 +256,9 @@ div.inline
    top:15%;
    background-color: #800000;
    width:53%;
-   height:10%;
+   height:15%;
+   font-size: 2vw;
+   color:white;
 
 }
 #main_workspace_content

@@ -17,7 +17,7 @@ $(document).ready(function(){
     });
 
 
-    $('body').on('click', '#main_head_buttoninput_input_folder_textfield', function () {
+    $('body').on('focus', '#main_head_buttoninput_input_folder_textfield', function () {
       $('#main_workspace_content').remove();
       $('#main_workspace').remove();
     });
@@ -36,7 +36,13 @@ $(document).ready(function(){
           $('#main_workspace').append("</div><div id='main_workspace_content'></div> ");
 
            text = data;
+           if(text !== "")
+           {
             $(text).appendTo('#main_workspace_content');
+            }
+            else {
+                $("Ordner nicht gefudnen!!").appendTo('#main_workspace_content');
+            }
         });
   });
 

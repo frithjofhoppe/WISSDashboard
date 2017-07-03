@@ -1,5 +1,6 @@
-<html>
+<html lang='de'>
  <head>
+   <meta charset='utf-8'/>
    <style>
    img
    {
@@ -39,8 +40,17 @@
    <?php
    $dir = "events/testfolder/";
 
+
+   $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard','wissdashboard','ccadmin14');
+   $q1 = "SELECT imgPath,showName from appmenu_galerie_bilder where groupID = 8";
+
+   $stm1 = $pdo_db_connection->prepare($q1);
+   $stm1->execute();
+   $linklocal = '//'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
+
+
   // Überprüft ob der angegebenen Dateiname ein Verzeichnis ist.
-   if (is_dir($dir)) {
+  /* if (is_dir($dir)) {
   //Öffnet das angegebene Verzeichnis
     if ($dh = opendir($dir)) {
         $images = array();
@@ -52,18 +62,16 @@
         }
 
         closedir($dh);
-
-        foreach($images as $img)
+*/
+        foreach($stm1 as $img)
         {
-          print "<div id = '".$img."' class='float distance'>";
-          print "<a href = 'pic/".$img."' target = '_blank'><img  class='order' src = 'pic/".$img."' alt = 'fail'/></a>";
-          print "<label class = 'distance'>".$img."</label>";
+          print "<div id = '".$img['imgPath']."' class='float distance'>";
+          print "<a href = '".$linklocal.''.$img['imgPath']."' ><img  class='order' src = '".$linklocal.''.$img['imgPath']."' alt = 'fail'/></a>";
+          print "<label class = 'distance'>".$img['showName']."</label>";
           print "</div>";
         }
 
       //print_r($images);
-    }
-   }
    ?>
  </div>
  </body>

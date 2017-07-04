@@ -15,7 +15,7 @@
           <img src="pic/logo.png" class="logo"/>
         </div>
       </div>
-      <a href="../index.html">
+      <a href="../../../index.html">
       <div id="sidebar_middle">
         <div id="sidebar_middle_center">
           <div id="sidebar_middle_logo">
@@ -31,27 +31,24 @@
       </a>
     </div>
     <div id = "main">
-      <div id ="main_content" class ="main_content">
-        <div id="main_first" class = "main_header">
-        <p class ="head_p" id="main_first_titel">
-        
-        </p>
-        </div>
-        <div id="main_second" class = "main_text">
-          <p class="text_p" id="main_second_text1">
+      <?php
+      $dir = "events/testfolder/";
 
 
-          </p>
-        </div>
-        <div id ="main_third" class = "main-picture">
-          <img src="pic/pic1.png" class="content_picture"/>
-        </div>
-        <div id ="main_4" class = "main_text">
-          <p class="text_p" id="main_4_text1">
+      $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard','wissdashboard','ccadmin14');
+      $q1 = "SELECT imgPath,showName from appmenu_galerie_bilder where groupID = 8";
 
-          </p>
-        </div>
-      </div>
+      $stm1 = $pdo_db_connection->prepare($q1);
+      $stm1->execute();
+      $linklocal = '//'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
+      
+      foreach($stm1 as $img)
+           {
+             print "<div id = '".$img['imgPath']."' class='float distance'>";
+             print "<a href = '".$linklocal.''.$img['imgPath']."' ><img  class='order' src = '".$linklocal.''.$img['imgPath']."' alt = 'fail'/></a>";
+             print "<label class = 'distance'>".$img['showName']."</label>";
+             print "</div>";
+           }
     </div>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/index.js"></script>

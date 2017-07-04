@@ -45,6 +45,7 @@ if($accessPw == "yes")
   $mainPathImages = "events\\".$additionalDir."\\".$actualImageName;
 
 
+
   /*$pdo_select = ("SELECT Titel from appmenu_kalender");
   $result = $pdo_db_connection->prepare($pdo_select);
   $result->execute();*/
@@ -66,13 +67,13 @@ if(true)
   echo("..\..\dashboard_appmenu\dashboard_appmenu_kalender\\events\\".$additionalDir."\\text\\titel.txt");
 
   /*fügt die daten der Datenbank hinzu*/
-  $pdo_createGroup= "INSERT INTO appmenu_galerie_gruppen (dirName,showName,Date) VALUES (:dn,:sn,:d)";
+  $pdo_createGroup= "INSERT INTO appmenu_galerie_gruppen (dirName,showName,Date,indexPath) VALUES (:dn,:sn,:d,:ip)";
   //$pdo_insertImages "INSERT INTO appmenu_galerie_bilder (imgPath,showName,(SELECT ID from appmenu_galerie_gruppen WHERE showName = '" .$groupName."'))";
 
   /*Prepariert Eingabe der Kalendereinträge*/
   $pdo_stmt1 = $pdo_db_connection->prepare($pdo_createGroup);
 
-  if($pdo_stmt1->execute(array('dn'=>$defAdditionalDir,'sn'=>$groupName,'d'=>$date)))
+  if($pdo_stmt1->execute(array('dn'=>$defAdditionalDir,'sn'=>$groupName,'d'=>$date,'ip'=>$mainPathSite)))
   {
         foreach($content["images"] as $var)
         {

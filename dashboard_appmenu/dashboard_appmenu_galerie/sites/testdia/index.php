@@ -31,26 +31,30 @@
       </a>
     </div>
     <div id = "main">
+      <form id="showView" method="POST" action="showView.php">
       <?php
-      $dir = "events/testfolder/";
 
-      $groupID = $_GET['group'];
+      $dir = "events/testfolder/";
+      $groupID = $_POST["group"];
 
       $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard','wissdashboard','ccadmin14');
-      $q1 = "SELECT imgPath,showName from appmenu_galerie_bilder where groupID = :gI";
+      $q1 = "SELECT imgPath,showName from appmenu_galerie_bilder where groupID = :groupID";
 
       $stm1 = $pdo_db_connection->prepare($q1);
-      $stm1->execute(array("gI"=>$groupID));
+      $stm1->execute(array("groupID" => $groupid));
       $linklocal = '//'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
 
       foreach($stm1 as $img)
            {
+
              print "<div id = '".$img['imgPath']."' class='float distance'>";
-             print "<a href = '".$linklocal.'/'.$img['imgPath']."' ><img  class='order' src = '".$linklocal.'/'.$img['imgPath']."' alt = 'fail'/></a>";
+             print "<a href = '".$linklocal.''.$img['imgPath']."' ><img  class='order' src = '".$linklocal.''.$img['imgPath']."' alt = 'fail'/></a>";
              print "<label class = 'distance'>".$img['showName']."</label>";
              print "</div>";
            }
+
            ?>
+       </form>
     </div>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/index.js"></script>

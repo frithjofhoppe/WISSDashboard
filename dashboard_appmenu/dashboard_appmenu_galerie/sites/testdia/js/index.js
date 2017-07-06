@@ -6,10 +6,15 @@ $(document).ready(function(){
   var $pic = $(".main-picture");
   var $mainpic = $("#img_head");
   var $headline = $(".head_p")
+  var $textTop = $("#main_second_text1");
+  var $textBottom = $("#main_4_text1");
+  var $textTitel = $("#main_first_titel");
 
-  $("#main_first_titel").load('text/titel.txt');
-  $("#main_second_text1").load('text/contentTop.txt');
-  $("#main_4_text1").load('text/contentBottom.txt');
+  var xhr1 = new XMLHttpRequest();
+
+  $textTitel.load('text/titel.txt');
+  $textBottom.load('text/contentBottom.txt');
+  $textTop.load('text/contentTop.txt');
 
   $('#sidebar_middle_center').hide().slideDown();
     $img.hide().each(function(index){
@@ -35,12 +40,6 @@ $(document).ready(function(){
     $headline.hide().each(function(index){
     $headline.delay(100*index).fadeIn(2500);
   });
-
-  $(".eventoutput").click(function(){
-      var id = $(this).attr("id");
-      location.href = 'sites/view/index.php?group=' + id;
-  });
-
 
 /*  $('sidebar_middle_center').on('click',function(event){
     event.preventDefault();

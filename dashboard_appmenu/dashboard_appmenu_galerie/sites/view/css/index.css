@@ -141,3 +141,28 @@ img.app
 {
   width:40%;
 }
+
+img.order
+{
+  width:100%;
+  height:auto;
+}
+.float
+{
+  width:19vw;
+  height:22vw;
+  float:left;
+}
+
+div.distance
+{
+  margin:3%;
+}
+
+label.distance
+{
+  font-size:1.5vw;
+  font-family:'Segoe UI light';
+  position:relative;
+  top:2%;
+}

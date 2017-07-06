@@ -17,7 +17,7 @@
       </div>
       <a href="../index.html">
       <div id="sidebar_middle">
-        <div id="sidebar_middle_center">
+        <div id="sidebar_middle_ center">
           <div id="sidebar_middle_logo">
               <img src="pic/pic_team_middle.svg" class="app"/>
           </div>

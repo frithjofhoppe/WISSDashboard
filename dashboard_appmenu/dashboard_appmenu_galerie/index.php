@@ -61,7 +61,7 @@
             foreach ($result as  $row)
              {
           //  print "<a href = '".$linklocal . $row['indexPath'] . "'  class =' eventoutputlink'>";
-            print "<div id = 'event_" . $row['ID'] . "'  class ='eventoutput' >";
+            print "<div id = '" . $row['ID'] . "'  class ='eventoutput' >";
             print "Thema:". $row['showName'];
             print "<label class='eventoutputlabel'>Datum: ".$row["date_formated"]. "</label>";
             print "</div>";

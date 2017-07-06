@@ -37,7 +37,7 @@ if($accessPw == "yes")
   $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard',$db_username,$db_password);
 
   $additionalDir = $folderName;
-  $defAdditionalDir = "..\..\dashboard_appmenu\dashboard_appmenu_galerie\\sites\\".$additionalDir;
+  $defAdditionalDir = "../../dashboard_appmenu/dashboard_appmenu_galerie/sites/view";
   $defaultDir = "..\dashboard_appmenu\dashboard_appmenu_galerie\\sites\default";
   $defaultDir = "..\dashboard_appmenu\dashboard_appmenu_galerie\\sites\\";
   $defindetlink = "\\sites\\".$additionalDir."\\index.php";
@@ -58,14 +58,14 @@ if(true)
 
 
   /*Kopiert den Standardordner für einen Kalendereintrag*/
-  exec("xcopy ..\..\dashboard_appmenu\dashboard_appmenu_galerie\sites\default ..\..\dashboard_appmenu\dashboard_appmenu_galerie\sites\\".$additionalDir." /E /C /Q /i /Y");
+  //xexec("xcopy ..\..\dashboard_appmenu\dashboard_appmenu_galerie\sites\default ..\..\dashboard_appmenu\dashboard_appmenu_galerie\sites\\".$additionalDir." /E /C /Q /i /Y");
 
   //Schreibt den Titel in die Datei
 /*  $myfile = fopen("..\..\dashboard_appmenu\dashboard_appmenu_galerie\sites\\".$additionalDir."\\text\\titel.txt","w");
   fwrite($myfile,$additionalDir);
   fclose($myfile);
   echo("..\..\dashboard_appmenu\dashboard_appmenu_kalender\\events\\".$additionalDir."\\text\\titel.txt");*/
-*/
+
   /*fügt die daten der Datenbank hinzu*/
   $pdo_createGroup= "INSERT INTO appmenu_galerie_gruppen (dirName,showName,Date,indexPath) VALUES (:dn,:sn,:d,:ip)";
   //$pdo_insertImages "INSERT INTO appmenu_galerie_bilder (imgPath,showName,(SELECT ID from appmenu_galerie_gruppen WHERE showName = '" .$groupName."'))";
@@ -78,7 +78,7 @@ if(true)
         foreach($content["images"] as $var)
         {
           $actualImageName = $var["name"];
-          $imgPath = "..\..\\events\\".$additionalDir."\\".$actualImageName;
+          $imgPath = "../../events/".$additionalDir."/".$actualImageName;
 
           $pdo_insertEachImages =  "INSERT INTO appmenu_galerie_bilder (imgPath,showName,groupID) values (:ip,:sN,(SELECT ID from appmenu_galerie_gruppen WHERE showName = :gN))";
           $pdo_stm3 = $pdo_db_connection->prepare($pdo_insertEachImages);

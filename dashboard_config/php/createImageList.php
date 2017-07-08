@@ -65,7 +65,7 @@ if(true)
   fwrite($myfile,$additionalDir);
   fclose($myfile);
   echo("..\..\dashboard_appmenu\dashboard_appmenu_kalender\\events\\".$additionalDir."\\text\\titel.txt");*/
-
+/*
   /*fügt die daten der Datenbank hinzu*/
   $pdo_createGroup= "INSERT INTO appmenu_galerie_gruppen (dirName,showName,Date,indexPath) VALUES (:dn,:sn,:d,:ip)";
   //$pdo_insertImages "INSERT INTO appmenu_galerie_bilder (imgPath,showName,(SELECT ID from appmenu_galerie_gruppen WHERE showName = '" .$groupName."'))";
@@ -80,9 +80,9 @@ if(true)
           $actualImageName = $var["name"];
           $imgPath = "../../events/".$additionalDir."/".$actualImageName;
 
-          $pdo_insertEachImages =  "INSERT INTO appmenu_galerie_bilder (imgPath,showName,groupID) values (:ip,:sN,(SELECT ID from appmenu_galerie_gruppen WHERE showName = :gN))";
+          $pdo_insertEachImages =  "INSERT INTO appmenu_galerie_bilder (imgPath,showName,groupID,imgName) values (:ip,:sN,(SELECT ID from appmenu_galerie_gruppen WHERE showName = :gN),:imgName)";
           $pdo_stm3 = $pdo_db_connection->prepare($pdo_insertEachImages);
-          if($pdo_stm3->execute(array('ip'=>$imgPath,'sN'=>$var["description"],'gN'=>$groupName)))
+          if($pdo_stm3->execute(array('ip'=>$imgPath,'sN'=>$var["description"],'gN'=>$groupName,"imgName"=>$actualImageName)))
           {
 
           }

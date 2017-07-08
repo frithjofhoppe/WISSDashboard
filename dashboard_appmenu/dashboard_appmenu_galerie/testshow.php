@@ -9,7 +9,6 @@ print "<html lang='de'>";
 print "<head><meta charset='utf-8'/></head>";
 foreach($stm1 as $result)
 {
-
   print "<a href='". $linklocal. '' .$result['imgPath']. "'>" . $result['showName'] ."</a><br/>";
 }
 print "</html>";

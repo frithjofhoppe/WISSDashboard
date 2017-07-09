@@ -3,18 +3,76 @@ $(document).ready(function(){
   //var phpContent = {"images":[{'name':"dog.jpg","group":"home"},{"name":"cat.jpg","group":"outdoor"},{"name":"bird.jpg","group":"sky"}]};
   var phpContent = {'images':[]};
   var isFirstTime = true;
+  var $selected = "";
 
   $('#main_head_buttoninput_button_create').click(function(){
     console.log("main_head_buttoninput_button_create");
-
     $('#enter').after().load("../html/manageGalerie_inputCreate.html");
     $('#main_workspace_content').remove();
     $('#main_workspace').remove();
+    $('#main_head_buttoninput_delete').remove();
     $('#modify').css('background-color',"buttonface");
     $('#create').css('background-color','gray');
     $('#remove').css('background-color',"buttonface");
 
-  }); 
+  });
+
+  $('#main_head_buttoninput_button_remove').click(function(){
+    $('#main_workspace_content').remove();
+    $('#main_workspace').remove();
+    $.ajax({
+      url:"manageGalerie_delete.php",
+      type:"POST",
+      data:{name:"hallo"},
+      success:function(data){
+        $('#modify').css('background-color','buttonface');
+        $('#create').css('background-color','buttonface');
+        $('#remove').css('background-color','gray');
+        $('#main_head_buttonmodify_modify_btnAlter').remove();
+        $('#main_head_buttoninput_input_btnAlter').remove();
+        $('#main_head_buttoninput_button').after("<div id='main_head_buttoninput_delete' ><div>");
+        $(data).appendTo('#main_head_buttoninput_delete');
+        $('#main_head_buttoninput_delete').append("<button id='btnDelete' class='deleteObject' name='save'>Speichern</button></div>");
+        $('#main_head_buttoninput_delete').append("<button id='btnDeleteAll' class='deleteObject' name='save'>Datenbank zurücksetzen</button></div>");
+
+      }
+    });
+  });
+
+  $('body').on('change', '#deloption', function() {
+       $selected = $('#deloption option:selected').attr('value');
+   });
+
+  $('body').on('click', '#btnDeleteAll', function () {
+    $.ajax({
+      url:"manageGalerie_deleteAll.php",
+      success:function(data){
+        if(data != "")
+        {
+          window.alert(data);
+          window.location.reload(true);
+        }
+      }
+    });
+  });
+
+  $('body').on('click', '#btnDelete', function () {
+    window.alert($selected);
+     $.ajax({
+      url:"manageGalerie_deleteEntries.php",
+      method:"POST",
+      data:{'groupid':$selected },
+      success:function(data){
+        if(data != "")
+        {
+          window.alert(data);
+          window.location.reload(true);
+        }
+      }
+    });
+
+
+  });
 
   $('#main_head_buttoninput_button_modify').click(function(){
     console.log("main_head_buttoninput_button_modify");
@@ -22,13 +80,14 @@ $(document).ready(function(){
     $('#modify').css('background-color','gray');
     $('#create').css('background-color','buttonface');
     $('#remove').css('background-color','buttonface');
+    $('#main_head_buttoninput_delete').remove();
     $("#main_head_buttoninput_input_btnAlter").remove();
     $('#main_workspace_content').remove();
     $('#main_workspace').remove();
     $('#enter').after().load("../html/manageGalerie_inputModify.html");
     });
 
-    $('body').on('focus', '#main_head_buttonmodify_modify_description_textfield', function () {
+    $('body').on('focus','#main_head_buttonmodify_modify_description_textfield', function () {
       $('#main_head_buttonmodify_modify_date_textfield').val('');
       $('#main_workspace_content').remove();
       $('#main_workspace').remove();
@@ -55,7 +114,6 @@ $(document).ready(function(){
           $('#main_workspace').append("<button id='save_modify' class='head' name='save'>Speichern</button></div>");
           out = data;
           $(out).appendTo('#main_workspace_content');
-          window.alert("Die Daten wurden übertragen");
 
           $.ajax({
             url:"getDBImageValue.php",

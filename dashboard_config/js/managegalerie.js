@@ -2,6 +2,34 @@ $(document).ready(function(){
 
   //var phpContent = {"images":[{'name':"dog.jpg","group":"home"},{"name":"cat.jpg","group":"outdoor"},{"name":"bird.jpg","group":"sky"}]};
   var phpContent = {'images':[]};
+  var isFirstTime = true;
+
+/*  if(isFirstTime === true)
+  {
+    $.ajax({
+      url:"getDBImageValue.php",
+      type:"POST",
+      data:{showname:$('#main_head_buttonmodify_modify_description_textfield').val()},
+      success:function(result){
+        var data = jQuery.parseJSON(result);
+        var counter = 0;
+        alert(data);
+          /*$.each(data, function(i, item) {
+            alert(item [0]);
+          });
+        }
+      });
+    isFirstTime = false;
+  }*/
+
+    var counter = 0;
+
+
+      var $img = $(this).children().first().children().html();
+      var $imgtext = $(this).children().last().children().val();
+
+
+
   $('#main_head_buttoninput_button_create').click(function(){
     console.log("main_head_buttoninput_button_create");
     $('#enter').after().load("../html/manageGalerie_inputCreate.html");
@@ -22,6 +50,11 @@ $(document).ready(function(){
     $('#enter').after().load("../html/manageGalerie_inputModify.html");
     });
 
+    $('body').on('focus', '#main_head_buttonmodify_modify_description_textfield', function () {
+      $('#main_workspace_content').remove();
+      $('#main_workspace').remove();
+    });
+
     $('body').on('blur', '#main_head_buttonmodify_modify_description_textfield', function () {
       console.log("main_head_buttonmodify_modify_description_textfield");
       window.alert("sdf");
@@ -39,12 +72,30 @@ $(document).ready(function(){
           $('#main_workspace').append("<label id='main_workspace_describer_describer'>Bezeichner</label>");
           $('#main_workspace').append("</div><div id='main_workspace_content'></div> ");
           $('#main_workspace').append("<div id='main_workspace_btnSave' class='endalign'>");
-          $('#main_workspace').append("<button id='save' class='head' name='save'>Speichern</button></div>");
+          $('#main_workspace').append("<button id='save_modify' class='head' name='save'>Speichern</button></div>");
           out = data;
           $(out).appendTo('#main_workspace_content');
           window.alert("Die Daten wurden übertragen");
         }
       );
+
+      $.ajax({
+        url:"getDBImageValue.php",
+        type:"POST",
+        data:{showname:$('#main_head_buttonmodify_modify_description_textfield').val()},
+        success:function(result){
+          var data = jQuery.parseJSON(result);
+          var counter = 0;
+      //    alert(data[0]);
+          $(".listobject").each(function(){
+            var $img = $(this).children().first().children().html();
+            var $imgtext = $(this).children().last().children().first();
+            $imgtext.val(data[counter]);
+          //  alert(data[0] + " innerhalb");
+            counter++;
+          });
+          }
+        });
     });
 
 

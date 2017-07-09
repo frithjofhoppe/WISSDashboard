@@ -4,7 +4,7 @@ $showName = $_POST['showname'];
 
 // Überprüft ob der angegebenen Dateiname ein Verzeichnis ist.
 
-//  $returnObject = (object)array()
+  $returnObject = array();
 
   $myfileUsername = fopen("..\\..\\..\\..\\dashboardPassword\username.txt","r");
   $db_username = fgets($myfileUsername);
@@ -23,22 +23,14 @@ $showName = $_POST['showname'];
   $result = $stmt1->fetch(PDO::FETCH_ASSOC);
     if($stmt2->execute(array("id"=>$result['ID'])))
     {
-
+    $counter = 0;
      foreach($stmt2 as $img)
      {
         //echo json_encode($img['showName']);
-       /*print "<div id = '".$img."' class='float distance'>";
-       print "<a href = 'pic/".$img."' target = '_blank'><img  class='order' src = 'pic/".$img."' alt = 'fail'/></a>";
-       print "<label class = 'distance'>".$img."</label>";
-       print "</div>";*/
-
-      print"<div class='listobject'>";
-      print "<div class='listobject_img'><label name='".$img['ID']."'>".$img['imgName']."</label></div>";
-      print "<div class='listobject_input'><input class='listobject_input_text' type='text' id='txt_".$img['ID']." name='txt_".$img['ID']."'/></div>";
-      print "</div>";
-
-
+        $return[$counter] = $img['showName'];
+        $counter++;
      }
+     echo json_encode($return);
     }
   }
    //print_r($images);

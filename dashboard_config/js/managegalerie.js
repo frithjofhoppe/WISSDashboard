@@ -4,9 +4,6 @@ $(document).ready(function(){
   var phpContent = {'images':[]};
   var isFirstTime = true;
 
-
-
-
   $('#main_head_buttoninput_button_create').click(function(){
     console.log("main_head_buttoninput_button_create");
 
@@ -17,7 +14,7 @@ $(document).ready(function(){
     $('#create').css('background-color','gray');
     $('#remove').css('background-color',"buttonface");
 
-  });
+  }); 
 
   $('#main_head_buttoninput_button_modify').click(function(){
     console.log("main_head_buttoninput_button_modify");

@@ -9,6 +9,7 @@ $(document).ready(function(){
 
   $('#main_head_buttoninput_button_create').click(function(){
     console.log("main_head_buttoninput_button_create");
+
     $('#enter').after().load("../html/manageGalerie_inputCreate.html");
     $('#main_workspace_content').remove();
     $('#main_workspace').remove();
@@ -20,6 +21,7 @@ $(document).ready(function(){
 
   $('#main_head_buttoninput_button_modify').click(function(){
     console.log("main_head_buttoninput_button_modify");
+
     $('#modify').css('background-color','gray');
     $('#create').css('background-color','buttonface');
     $('#remove').css('background-color','buttonface');
@@ -30,6 +32,7 @@ $(document).ready(function(){
     });
 
     $('body').on('focus', '#main_head_buttonmodify_modify_description_textfield', function () {
+      $('#main_head_buttonmodify_modify_date_textfield').val('');
       $('#main_workspace_content').remove();
       $('#main_workspace').remove();
     });
@@ -37,6 +40,8 @@ $(document).ready(function(){
     $('body').on('blur', '#main_head_buttonmodify_modify_description_textfield', function () {
       console.log("main_head_buttonmodify_modify_description_textfield");
       var wert =  $('#main_head_buttonmodify_modify_description_textfield').val();
+      if(wert !== "")
+      {
       var out = "";
       $.post('getDBImageList.php',
         {
@@ -54,27 +59,26 @@ $(document).ready(function(){
           out = data;
           $(out).appendTo('#main_workspace_content');
           window.alert("Die Daten wurden übertragen");
+
+          $.ajax({
+            url:"getDBImageValue.php",
+            type:"POST",
+            data:{showname:$('#main_head_buttonmodify_modify_description_textfield').val()},
+            success:function(result){
+              var data = jQuery.parseJSON(result);
+              var count = 1;
+              $('#main_head_buttonmodify_modify_date_textfield').val(data[0]);
+              $(".listobject").each(function(){
+                var $img = $(this).children().first().children().html();
+                var $imgtext = $(this).children().last().children().first();
+                $imgtext.val(data[count]);
+                count++;
+              });
+            }
+          });
         }
       );
-
-      $.ajax({
-        url:"getDBImageValue.php",
-        type:"POST",
-        data:{showname:$('#main_head_buttonmodify_modify_description_textfield').val()},
-        success:function(result){
-          var data = jQuery.parseJSON(result);
-          var count = 1;
-          alert(data + " drin");
-          $('#main_head_buttonmodify_modify_date_textfield').val(data[0]);
-          $(".listobject").each(function(){
-            var $img = $(this).children().first().children().html();
-            var $imgtext = $(this).children().last().children().first();
-            $imgtext.val(data[count]);
-          //  alert(data[0] + " innerhalb");
-            count++;
-          });
-          }
-        });
+      }
     });
 
 
@@ -127,7 +131,7 @@ $(document).ready(function(){
       phpContent.images.push({"name":img,"description":imgtext,"group":group,"date":date,"folder":folder});
     });
 
-    window.alert(phpContent);
+  //  window.alert(phpContent);
     $.ajax({
       type:'POST',
       url:'createImageList.php',
@@ -137,12 +141,14 @@ $(document).ready(function(){
         window.alert("Die Daten wurden übertragen");
       }
     });
+    window.alert("Daten wruden erfasst");
+    window.location.reload(true);
 
   });
 
   $('body').on('click','#save_modify',function(){
-    var date = $('#main_head_buttoninput_input_date_textfield').val();
-    var group = $('#main_head_buttoninput_input_description_textfield').val();
+    var date = $('#main_head_buttonmodify_modify_date_textfield').val();
+    var groupshowname = $('#main_head_buttonmodify_modify_description_textfield').val();
     //var folder = $('#main_head_buttoninput_input_folder_textfield').val();
 
   var modifyContent = {'images':[]};
@@ -151,7 +157,7 @@ $(document).ready(function(){
     var img = $(this).children().first().children().html();
     var imgtext = $(this).children().last().children().val();
     var imgID = $(this).children().first().children().first().attr('name');
-    modifyContent.images.push({"name":img,"description":imgtext,"imgid":imgID,"date":date});
+    modifyContent.images.push({"name":img,"description":imgtext,"imgid":imgID,"date":date,"groupShowName":groupshowname});
   });
   phpContent = modifyContent;
 
@@ -162,7 +168,7 @@ $(document).ready(function(){
     success:function(data)
     {
 
-      window.alert(data.status + " aktueller data Status");
+      //window.alert(data.status + " aktueller data Status");
       if(data.status == true)
       {
         window.alert("Änderungen wruden erfolgreich übernommen");
@@ -171,7 +177,21 @@ $(document).ready(function(){
       {
         window.alert("Es trat ein Problem bei der Verarbeitung auf");
       }
+
+      $('.inline').each(function(){
+        $(this).children().first().val('');
+      });
+
+      $('.listobject').each(function(){
+        $(this).children().last().children().val('>gespeichert');
+      });
+      window.alert("Daten wruden geändert");
+      window.location.reload(true);
+
     }
   });
+
+
+
   });
 });

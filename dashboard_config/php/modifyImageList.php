@@ -46,7 +46,7 @@ if($accessPw == "yes")
 
   $q2 = "UPDATE appmenu_galerie_gruppen SET Date = :d WHERE showName = :sN";
   $s2 = $pdo_db_connection->prepare($q2);
-  if($s2->execute(array('d'=>$date,'sN'=>$content['images'][0]['description'])))
+  if($s2->execute(array('d'=>$date,'sN'=>$content['images'][0]['groupShowName'])))
   {
 
   foreach($content["images"] as $var)

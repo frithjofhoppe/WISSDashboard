@@ -13,7 +13,7 @@ $showName = $_POST['showname'];
   $db_password = fgets($myfilePasswort);
 
   $pdo_db_connection = new PDO('mysql:host=localhost;dbname=dashboard',$db_username,$db_password);
-  $query1 = "SELECT ID FROM appmenu_galerie_gruppen WHERE showName =:sN";
+  $query1 = "SELECT ID,DATE_FORMAT(Date,'%d.%m.%Y') as Date FROM appmenu_galerie_gruppen WHERE showName =:sN";
   $stmt1 = $pdo_db_connection->prepare($query1);
 
   $query2 = "SELECT ID,imgName,showName FROM appmenu_galerie_bilder WHERE groupID = :id";
@@ -24,9 +24,11 @@ $showName = $_POST['showname'];
     if($stmt2->execute(array("id"=>$result['ID'])))
     {
     $counter = 0;
+    $return[$counter] = $result['Date'];
+    $counter++;
      foreach($stmt2 as $img)
      {
-        //echo json_encode($img['showName']);
+
         $return[$counter] = $img['showName'];
         $counter++;
      }

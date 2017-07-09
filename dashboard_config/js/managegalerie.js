@@ -33,6 +33,8 @@ $(document).ready(function(){
   $('#main_head_buttoninput_button_create').click(function(){
     console.log("main_head_buttoninput_button_create");
     $('#enter').after().load("../html/manageGalerie_inputCreate.html");
+    $('#main_workspace_content').remove();
+    $('#main_workspace').remove();
     $('#modify').css('background-color',"buttonface");
     $('#create').css('background-color','gray');
     $('#remove').css('background-color',"buttonface");
@@ -57,7 +59,6 @@ $(document).ready(function(){
 
     $('body').on('blur', '#main_head_buttonmodify_modify_description_textfield', function () {
       console.log("main_head_buttonmodify_modify_description_textfield");
-      window.alert("sdf");
       var wert =  $('#main_head_buttonmodify_modify_description_textfield').val();
       var out = "";
       $.post('getDBImageList.php',
@@ -85,8 +86,9 @@ $(document).ready(function(){
         data:{showname:$('#main_head_buttonmodify_modify_description_textfield').val()},
         success:function(result){
           var data = jQuery.parseJSON(result);
-          var counter = 0;
-      //    alert(data[0]);
+          var counter = 1;
+          alert(data + " drin");
+          $('#main_head_buttonmodify_modify_date_textfield').val(data[0]);
           $(".listobject").each(function(){
             var $img = $(this).children().first().children().html();
             var $imgtext = $(this).children().last().children().first();

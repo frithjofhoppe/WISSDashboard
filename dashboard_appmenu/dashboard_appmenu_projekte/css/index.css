@@ -123,6 +123,7 @@ img.logo
 {
   width:70%;
   height: auto;
+  margin-top: 15%;
 }
 
 
@@ -130,6 +131,7 @@ img.content_picture
 {
   width:20%;
   height: auto;
+  margin-top: 10%;
 }
 
 /*sidebar stellt das Seitenelement zu rechten Seite der Ansicht da*/

@@ -21,6 +21,7 @@
     if($s1->execute())
     {
       print "<select id='deloption' class='deleteObject'>";
+      print "<option value='default'>Bitte Auswählen</option>";
       foreach($s1 as $group)
       {
         print"<option value='".$group['ID']."'>".$group['showName']."</option>";

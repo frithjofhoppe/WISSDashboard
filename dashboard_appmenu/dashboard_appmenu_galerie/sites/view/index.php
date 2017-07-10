@@ -45,7 +45,7 @@
 
       foreach($stm1 as $img)
            {
-             print "<div id = '".$img['imgPath']."' class='float distance'>";
+             print "<div id = '".$img['imgPath']."' class='float distance zoompic'>";
              print "<a href = '".$linklocal.'/'.$img['imgPath']."' ><img  class='order' src = '".$linklocal.'/'.$img['imgPath']."' alt = 'fail'/></a>";
              print "<label class = 'distance'>".$img['showName']."</label>";
              print "</div>";

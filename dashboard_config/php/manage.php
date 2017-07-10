@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset ="utf-8" />
-    <link rel="stylesheet" type="text/css" href="../css/indexprojekt.css">
+    <link rel="stylesheet" type="text/css" href="../css/indexcalendar.css">
   </head>
   <body>
     <div id = "header">

@@ -3,7 +3,7 @@ $(document).ready(function(){
   //var phpContent = {"images":[{'name':"dog.jpg","group":"home"},{"name":"cat.jpg","group":"outdoor"},{"name":"bird.jpg","group":"sky"}]};
   var phpContent = {'images':[]};
   var isFirstTime = true;
-  var $selected = "";
+  var $selected = "default";
 
   $('#main_head_buttoninput_button_create').click(function(){
     console.log("main_head_buttoninput_button_create");
@@ -32,7 +32,7 @@ $(document).ready(function(){
         $('#main_head_buttoninput_input_btnAlter').remove();
         $('#main_head_buttoninput_button').after("<div id='main_head_buttoninput_delete' ><div>");
         $(data).appendTo('#main_head_buttoninput_delete');
-        $('#main_head_buttoninput_delete').append("<button id='btnDelete' class='deleteObject' name='save'>Speichern</button></div>");
+        $('#main_head_buttoninput_delete').append("<button id='btnDelete' class='deleteObject' name='save'>Entfernen</button></div>");
         $('#main_head_buttoninput_delete').append("<button id='btnDeleteAll' class='deleteObject' name='save'>Datenbank zurücksetzen</button></div>");
 
       }
@@ -58,6 +58,8 @@ $(document).ready(function(){
 
   $('body').on('click', '#btnDelete', function () {
     window.alert($selected);
+    if($selected != "default")
+    {
      $.ajax({
       url:"manageGalerie_deleteEntries.php",
       method:"POST",
@@ -70,8 +72,11 @@ $(document).ready(function(){
         }
       }
     });
-
-
+  }
+  else
+  {
+      window.alert("Wählen sie einen Namen aus");
+  }
   });
 
   $('#main_head_buttoninput_button_modify').click(function(){

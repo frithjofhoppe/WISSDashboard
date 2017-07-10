@@ -6,7 +6,7 @@
   <body>
     <div id = "header">
       <div id="img_head">
-        <img src="pic/pic_team_head" class="head_img"/>
+        <img src="pic/galerie3_v1.jpg" class="head_img"/>
       </div>
     </div>
     <div id="sidebar">

@@ -17,9 +17,6 @@
       </div>
       <div id="sidebar_middle">
         <div id="sidebar_middle_center">
-          <div id="sidebar_middle_logo">
-              <img src="../pic/settings.svg" class="app"/>
-          </div>
           <div id="sidebar_middle_txt">
             <a href="manageimg.php" class="sidebar_a_pages">
               <div id="sidebare_middle_text_link1" class ="sidebare_middle_text_link">
@@ -49,13 +46,6 @@
                 </p>
               </div>
             </a>
-            <a href="managelernen.php" class="sidebar_a_pages">
-              <div id="sidebare_middle_text_link5" class ="sidebare_middle_text_link">
-                <p class="sidebar_middle_txt" >
-                  Lernen
-                </p>
-              </div>
-            </a>
             <a href="manageumgebung.php" class="sidebar_a_pages">
               <div id="sidebare_middle_text_link6" class ="sidebare_middle_text_link">
                 <p class="sidebar_middle_txt" >
@@ -74,6 +64,13 @@
               <div id="sidebare_middle_text_link8" class ="sidebare_middle_text_link">
                 <p class="sidebar_middle_txt" >
                   Logout
+                </p>
+              </div>
+            </a>
+            <a class="sidebar_a_pages">
+              <div id="sidebare_middle_text_link9" class ="sidebare_middle_text_link">
+                <p class="sidebar_middle_txt" >
+                  Neustarten
                 </p>
               </div>
             </a>

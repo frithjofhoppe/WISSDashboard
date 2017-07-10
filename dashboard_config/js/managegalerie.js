@@ -5,6 +5,26 @@ $(document).ready(function(){
   var isFirstTime = true;
   var $selected = "default";
 
+
+  $('#sidebare_middle_text_link9').click(function(){
+
+    ipadress = "";
+    $.ajax({
+      url:"getIP.php",
+      success:function(data){
+        ipadress = data;
+
+        $.ajax({
+          url:"http://"+ipadress+"/restart.php?pw=raspiwebserver",
+          crossDomain: true,
+          dataType: 'jsonp',
+        });
+
+        window.alert("Gerät wird neu gestartet");
+      }
+    });
+  });
+
   $('#main_head_buttoninput_button_create').click(function(){
     console.log("main_head_buttoninput_button_create");
     $('#enter').after().load("../html/manageGalerie_inputCreate.html");

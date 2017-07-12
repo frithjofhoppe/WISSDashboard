@@ -9,7 +9,7 @@ $(document).ready(function(){
   var $textTop = $("#main_second_text1");
   var $textBottom = $("#main_4_text1");
   var $textTitel = $("#main_first_titel");
-  var pic = false;
+
   var xhr1 = new XMLHttpRequest();
 
   $textTitel.load('text/titel.txt');
@@ -40,17 +40,6 @@ $(document).ready(function(){
     $headline.hide().each(function(index){
     $headline.delay(100*index).fadeIn(2500);
   });
-
-  $('.order').click(function(event){
-    event.preventDefault();
-  });
-
-/*  $("body").on('click','.zoompic',function(){
-      this.src=$(this).attr('src');
-      pic = true;
-
-      this.src=$(this).attr('http://127.0.0.1/dashboard/dashboard_appmenu/');
-  });*/
 
 /*  $('sidebar_middle_center').on('click',function(event){
     event.preventDefault();

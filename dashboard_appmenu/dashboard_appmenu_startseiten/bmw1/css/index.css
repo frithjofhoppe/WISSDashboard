@@ -53,7 +53,7 @@ body
 
 img.head_img
 {
-  height: 130%;
+  height: 340%;
   width:auto;
 }
 
@@ -62,6 +62,7 @@ img.logo
 {
   width:70%;
   height: auto;
+  margin-top: 15%;
 }
 
 

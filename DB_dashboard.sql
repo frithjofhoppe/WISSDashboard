@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 11. Jul 2017 um 07:39
+-- Erstellungszeit: 13. Jul 2017 um 07:52
 -- Server-Version: 10.1.22-MariaDB
 -- PHP-Version: 7.1.4
 
@@ -101,8 +101,7 @@ CREATE TABLE `appmenu_kalender` (
 --
 
 INSERT INTO `appmenu_kalender` (`ID`, `WorkingDirectory`, `Titel`, `Addition`, `Date`, `Link`) VALUES
-(13, '..\\..\\dashboard_appmenu\\dashboard_appmenu_kalender\\events\\testseite', 'testseite', 'irgendetwas', '2000-01-01', '\\events\\testseite\\index.html'),
-(14, '..\\..\\dashboard_appmenu\\dashboard_appmenu_kalender\\events\\Tag_der_offenen_TÃ¼r', 'Tag_der_offenen_TÃ¼r', 'irgendetwas', '2017-08-15', '\\events\\Tag_der_offenen_TÃ¼r\\index.html');
+(1, '..\\..\\dashboard_appmenu\\dashboard_appmenu_kalender\\events\\Firmenessen', 'Firmenessen', 'Firmenessen_BIT', '2018-06-12', '\\events\\Firmenessen\\index.html');
 
 -- --------------------------------------------------------
 
@@ -152,9 +151,10 @@ CREATE TABLE `appmenu_team` (
 INSERT INTO `appmenu_team` (`ID`, `ImgPersonPath`, `ImgPersonShow`, `Person`, `Position`, `Mail`, `Telephone`) VALUES
 (6, 'pic\\Andre_Fluri.jpg', 'Andre_Fluri.jpg', 'AndrÃ© Fluri', 'Standortleiter', 'andre.fluri@wiss.ch', NULL),
 (7, 'pic\\Peter_Thomet.jpg', 'Peter_Thomet.jpg', 'Peter Thomet', 'Schulleiter Grundbildung', 'peter.thomet@wiss.ch', NULL),
-(8, 'pic\\Esther_Schaer.jpg', 'Esther_Schaer.jpg', 'Esther Schaer', 'Leiterin HÃ¶here Berufsbildung', 'esther.schaer@wiss.ch', NULL),
+(8, 'pic\\Svend_Waldorff.jpg', 'Svend_Waldorff.jpg', 'Svend Waldorff', 'Betreuer Berufsumsteiger', 'svend.waldorff@wiss.ch', NULL),
 (9, 'pic\\Tamara_Jendly.jpg', 'Tamara_Jendly.jpg', 'Tamara Jendly', 'Lehrgangsbetreuerin Firmen', 'tamara.jendly@wiss.ch', NULL),
-(10, 'pic\\Alain_Fluri.jpg', 'Alain_Fluri.jpg', 'Alain Fluri', 'Mitarbeiter ICT', 'alain.fluri@wiss.ch', NULL);
+(10, 'pic\\Alain_Fluri.jpg', 'Alain_Fluri.jpg', 'Alain Fluri', 'Mitarbeiter ICT', 'alain.fluri@wiss.ch', NULL),
+(12, 'pic\\Esther_Schaer.jpg', 'Esther_Schaer.jpg', 'Esther Schaer', 'Leiterin HÃ¶here Berufsbildung', 'esther.schaer@wiss.ch', NULL);
 
 -- --------------------------------------------------------
 
@@ -236,7 +236,9 @@ INSERT INTO `main_pictures` (`ID`, `showName`, `dirLink`, `imgLink`) VALUES
 (27, 'Piktochart', '\\dashboard_appmenu\\dashboard_appmenu_startseiten\\Piktochart\\index.html', 'dashboard_main\\pic\\piktochart.png'),
 (28, 'Mango', '\\dashboard_appmenu\\dashboard_appmenu_startseiten\\Mango\\index.html', 'dashboard_main\\pic\\test1.png'),
 (30, 'beste', '\\dashboard_appmenu\\dashboard_appmenu_startseiten\\beste\\index.html', 'dashboard_main\\pic\\seite1.jpg'),
-(32, 'Fantastisch', '\\dashboard_appmenu\\dashboard_appmenu_startseiten\\Fantastisch\\index.html', 'dashboard_main\\pic\\fantastisch.png');
+(32, 'Fantastisch', '\\dashboard_appmenu\\dashboard_appmenu_startseiten\\Fantastisch\\index.html', 'dashboard_main\\pic\\fantastisch.png'),
+(33, 'bmw1', '\\dashboard_appmenu\\dashboard_appmenu_startseiten\\bmw1\\index.html', 'dashboard_main\\pic\\bmw.png'),
+(34, 'bmw2', '\\dashboard_appmenu\\dashboard_appmenu_startseiten\\bmw2\\index.html', 'dashboard_main\\pic\\bmw.png');
 
 --
 -- Indizes der exportierten Tabellen
@@ -315,7 +317,7 @@ ALTER TABLE `appmenu_galerie_gruppen`
 -- AUTO_INCREMENT für Tabelle `appmenu_kalender`
 --
 ALTER TABLE `appmenu_kalender`
-  MODIFY `ID` double NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` double NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT für Tabelle `appmenu_projekte`
 --
@@ -325,7 +327,7 @@ ALTER TABLE `appmenu_projekte`
 -- AUTO_INCREMENT für Tabelle `appmenu_team`
 --
 ALTER TABLE `appmenu_team`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT für Tabelle `appmenu_umgebung`
 --
@@ -345,7 +347,7 @@ ALTER TABLE `config_authentication`
 -- AUTO_INCREMENT für Tabelle `main_pictures`
 --
 ALTER TABLE `main_pictures`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- Constraints der exportierten Tabellen
 --
